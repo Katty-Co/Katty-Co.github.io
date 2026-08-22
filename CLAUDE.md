@@ -33,6 +33,17 @@ The most recent raw export is kept beside the repo as `Kat & Co (standalone).htm
 (untracked); `index.html` is a copy of it, renamed because Pages requires that
 filename and the original contains spaces, an ampersand and parentheses.
 
+**The static head is not a patch point either.** The top of the file looks like
+ordinary editable HTML — `<!DOCTYPE html>`, `<html>`, a `<head>` with styles and
+the loader `<script>`. It is not a useful place to fix anything: the loader calls
+`replaceWith` on the document root once unpacking finishes, so the original
+`<html>` element and its attributes are discarded. Adding `lang="en"` there, for
+example, changes the file but has zero effect at runtime — verified. Document-level
+fixes must come from the source project.
+
+Corollary: the app injects its own `<meta name="viewport">` at runtime, so grepping
+the static head for one gives a false negative. Check the live DOM, not the file.
+
 ### 2. `.gitignore` is a whitelist. Keep it that way.
 
 The working folder also holds roughly **2.6 GB of raw source photography and
@@ -147,12 +158,21 @@ meaningless noise. After replacing `index.html`:
 4. Confirm the console is clean, `document.forms.length > 0`, and that the nav
    links actually navigate. Hard-reload or cache-bust — a stale bundle will
    otherwise appear to work when it has not changed.
-5. After pushing, confirm the live `Content-Length` matches the local byte count:
+5. Spot-check accessibility in the live DOM (not the file): `document.documentElement.lang`
+   should be set, `document.images` should all have `alt`, and
+   `document.documentElement.scrollWidth` must not exceed `window.innerWidth` at a
+   375px viewport. As of the last check: alt text complete on all 18 images and no
+   horizontal overflow, but `lang` is unset and can only be fixed upstream.
+6. After pushing, confirm the live `Content-Length` matches the local byte count:
 
 ```bash
 stat -c%s index.html
-curl -sI https://katty-co.github.io | grep -i content-length
+curl -sI "https://katty-co.github.io/?cb=$RANDOM" | grep -i content-length
 ```
+
+Pages serves with `Cache-Control: max-age=600`, so a fresh deploy can take a few
+minutes to appear and a plain reload may show the previous bundle. Always append a
+cache-busting query string when verifying, and hard-reload in the browser.
 
 ## Site structure
 
