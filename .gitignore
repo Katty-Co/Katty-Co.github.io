@@ -8,6 +8,7 @@
 !/.gitignore
 !/.gitattributes
 !/.nojekyll
+!/CLAUDE.md
 !/README.md
 !/index.html
 !/brand/
