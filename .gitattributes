@@ -1,0 +1,11 @@
+# Default: let Git normalize ordinary text files.
+* text=auto
+
+# The standalone bundle embeds a base64 asset payload. Line-ending
+# normalization must never touch it, or the bundle fails to unpack.
+index.html -text
+
+# Binary brand assets.
+*.png   binary
+*.af    binary
+*.svg   -text

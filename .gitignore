@@ -1,0 +1,23 @@
+# Whitelist strategy: this working folder also holds ~2.6 GB of raw source
+# photography and a 1.3 GB zip archive. Ignoring everything by default and
+# opting files in makes it impossible to stage those by accident.
+
+/*
+
+# --- Tracked files ---
+!/.gitignore
+!/.gitattributes
+!/.nojekyll
+!/README.md
+!/index.html
+!/brand/
+
+# Never track, even if moved inside a whitelisted folder
+.DS_Store
+Thumbs.db
+*.zip
+*.mov
+*.MOV
+*.mp4
+*.heic
+*.HEIC
