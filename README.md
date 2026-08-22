@@ -46,10 +46,14 @@ Then visit http://localhost:8765.
 
 ## Site contents
 
-Single-page layout with anchored sections: hero, about Alejandra, the four
-service tiers with pricing, a profile of Kat (resident cat and nominal Head of
-Hospitality), client testimonials sourced from Rover, the household pet roster,
-an FAQ, and a booking enquiry form.
+Single-page layout: hero, about Alejandra, the four service tiers with pricing, a
+profile of Kat (resident cat and nominal Head of Hospitality), client testimonials
+sourced from Rover, and a stats band.
+
+Further sections — the household pet roster, an FAQ and a booking enquiry form —
+are present in the bundle but are not currently reachable, because the export
+serializes their nav handlers without compiling them. See `CLAUDE.md` §6.
+Enquiries go to Alejandra directly or through her Rover profile in the meantime.
 
 ## Source media
 

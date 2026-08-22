@@ -81,6 +81,43 @@ deliberately kept separate from the owner's professional and other personal
 namespaces. A global git identity is configured, so the default is correct; just
 don't override it in this repo.
 
+### 6. Known issue: the export ships un-compiled interaction directives
+
+The current bundle renders only the landing view. Everything behind the nav —
+**The Pack, Reviews, FAQ and the booking enquiry form** — exists in the payload
+but never mounts, so `document.forms` is empty and every nav link is inert.
+
+The cause is in the export, not in this repo. Interaction is serialized as
+declarative placeholders that nothing ever binds:
+
+```html
+<a href="#" sc-camel-on-click="{{ goPets }}" style-hover="background:#F4795B;">The Pack</a>
+```
+
+Measured in the bundle: 38 `sc-camel-on-click`, 8 `sc-camel-on-input`,
+2 `sc-camel-on-submit`, 1 `sc-camel-on-change`, 28 `style-hover`, and 107
+unresolved `{{ binding }}` expressions — against **zero** compiled `onClick` or
+`onSubmit` props, and **zero** references to `sc-camel` or `{{` anywhere in the
+loader code. There is no runtime present that could attach them.
+
+Affected handlers: `goHome` `goServices` `goAbout` `goPets` `goReviews` `goFaq`
+`goContact` (navigation), `toggleMenu` / `menuOpen` (mobile menu), `showPrices`,
+`showCrew`, `submit` (booking form), `submitReview` (review form).
+
+Do not try to patch this in `index.html` — it is generated, and the payload is
+not safely editable. It has to be fixed where the bundle is produced, by
+exporting a **built application** rather than a design-time serialization.
+
+Guard before deploying any new bundle:
+
+```bash
+grep -o 'sc-camel-on-[a-z]*' index.html | wc -l   # want 0
+grep -o -E '\{\{ *[a-zA-Z][A-Za-z0-9_]* *\}\}' index.html | wc -l   # want 0
+```
+
+Non-zero means the interactive layer will be dead again. A useful smoke test is
+that `document.forms.length` should be greater than 0 once the export is correct.
+
 ## Layout
 
 | Path | Purpose |
@@ -105,9 +142,12 @@ Rendering matters more than a diff here, since the diff of a rebuilt bundle is
 meaningless noise. After replacing `index.html`:
 
 1. Confirm the two sha256 hashes match (see §3).
-2. Load the page and confirm it renders past the "Unpacking..." stage.
-3. Confirm the browser console is free of errors.
-4. After pushing, confirm the live `Content-Length` matches the local byte count:
+2. Run the un-compiled-directive guard in §6. Both counts must be zero.
+3. Load the page and confirm it renders past the "Unpacking..." stage.
+4. Confirm the console is clean, `document.forms.length > 0`, and that the nav
+   links actually navigate. Hard-reload or cache-bust — a stale bundle will
+   otherwise appear to work when it has not changed.
+5. After pushing, confirm the live `Content-Length` matches the local byte count:
 
 ```bash
 stat -c%s index.html
@@ -116,7 +156,13 @@ curl -sI https://katty-co.github.io | grep -i content-length
 
 ## Site structure
 
-Single page with anchored sections: hero, about Alejandra, four service tiers with
-pricing, a profile of Kat (the resident cat), client testimonials sourced from
-Rover, the household pet roster, an FAQ, and a booking enquiry form. Bookings go
-through Alejandra directly or via her Rover profile.
+Intended as a single page with anchored sections: hero, about Alejandra, four
+service tiers with pricing, a profile of Kat (the resident cat), client
+testimonials sourced from Rover, the household pet roster, an FAQ, and a booking
+enquiry form.
+
+**What currently renders** is the hero, about, the four service tiers, the Kat
+profile, testimonials and the stats band — ending at "What owners say when they
+get home". The remaining sections are present in the payload but do not mount;
+see §6. Bookings therefore happen through Alejandra directly or via her Rover
+profile, not through the on-page form.
