@@ -103,6 +103,8 @@ const HEADER_CSS = `
 .kc-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 [data-sent-panel][hidden]{display:none!important}
 [data-pet-block][hidden],[data-crew-block][hidden],[data-cap-note][hidden]{display:none!important}
+[data-price-card]{display:flex!important;flex-direction:column}
+[data-price-pill]{margin-top:auto;align-self:flex-start}
 `;
 
 function rewriteLinks($) {
@@ -229,6 +231,40 @@ function field(name, label, type, ph, required) {
 }
 
 /* ---------- per-page transforms ---------- */
+
+/* Pin the price pill to the bottom of each service card.
+   The design tries to do this with min-height:4.8em on the blurb, which holds
+   only while every blurb wraps to the same number of lines — "Boarding" wraps
+   to four and pushes its price down. A flex column with margin-top:auto keeps
+   the row aligned at any viewport width. The icon has an explicit 52px width
+   so it is unaffected; the pill needs align-self so it keeps hugging its text
+   instead of stretching to the card. */
+const PRICE_RE = /^from \$\d+\s*\/\s*\w+$/i;
+function alignPriceCards($) {
+  let n = 0;
+  $('body *').each((i, el) => {
+    const $el = $(el);
+    if ($el.children().length || !PRICE_RE.test($el.text().trim())) return;
+    let node = $el;
+    for (let d = 0; d < 6; d++) {
+      const parent = node.parent();
+      if (!parent.length) return;
+      if (/display:\s*grid/i.test(parent.attr('style') || '')) {
+        if (node.attr('data-price-card') === undefined) {
+          node.attr('data-price-card', '');
+          node.children().each((j, ch) => {
+            if (PRICE_RE.test($(ch).text().trim())) $(ch).attr('data-price-pill', '');
+          });
+          n++;
+        }
+        return;
+      }
+      node = parent;
+    }
+  });
+  return n;
+}
+
 function doIndex($) {
   // tag the googly eyes (runtime used callback refs, which leave no trace in the DOM)
   const pupils = $('span[style*="will-change"]');
@@ -375,6 +411,7 @@ const HEADER_HTML = buildHeader();
 const $3plus = load('booking-3plus');
 
 const report = [];
+const cardReport = [];
 for (const page of PAGES) {
   const $ = load(page.key === 'booking' ? 'booking-2' : page.key);
 
@@ -386,6 +423,9 @@ for (const page of PAGES) {
   // 2. page-specific work
   let sent = '';
   if (page.key === 'index') { const n = doIndex($); if (n !== 2) console.warn('  ! index: expected 2 pupils, found ' + n); }
+  const priced = alignPriceCards($);
+  if (page.key === 'index' && priced !== 4) throw new Error('index: expected 4 price cards to align, tagged ' + priced);
+  if (priced) cardReport.push(page.key + ':' + priced);
   if (page.key === 'pack') doPack($);
   if (page.key === 'reviews') { const f = doReviews($); sent = sentPanel('reviews-sent', 'Thank you'); if (sent) f.after(sent); }
   if (page.key === 'booking') { const f = doBooking($, $3plus); sent = sentPanel('booking-sent', 'Got it'); if (sent) f.after(sent); }
@@ -505,6 +545,7 @@ for (const p of PAGES) {
 
 console.table(report);
 console.log('hover rules generated:', hoverCss.length);
+console.log('price cards aligned:', cardReport.join(' ') || 'none');
 console.log(failures ? '\n*** ' + failures + ' GUARD FAILURE(S) ***' : '\nguards: all pages clean');
 console.log('images copied:', copied);
 reused.forEach(s => console.warn('  ! reused existing ' + s + ' — not present in the canvas export'));
