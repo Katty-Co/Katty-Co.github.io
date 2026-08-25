@@ -12,6 +12,10 @@
 !/README.md
 !/robots.txt
 !/sitemap.xml
+
+# The custom domain for GitHub Pages. Losing this file takes kattyco.ca
+# offline, and the whitelist above would otherwise refuse to re-add it.
+!/CNAME
 !/brand/
 
 # The built site: one folder per route, plus shared assets.

@@ -13,7 +13,9 @@ const CAP = path.join(__dirname, 'captured');
 const OUT = process.env.KATCO_OUT || path.resolve(__dirname, '..');
 const SRC = process.env.KATCO_SRC || path.resolve(__dirname, '../../Website Pages');
 const FORMSPREE = 'https://formspree.io/f/xjybqoar';
-const ORIGIN = 'https://katty-co.github.io';
+// The site is served at the custom domain; katty-co.github.io 301s here.
+// Canonical/OG/sitemap URLs must name the domain we actually promote.
+const ORIGIN = process.env.KATCO_ORIGIN || 'https://kattyco.ca';
 
 const PAGES = [
   { key: 'index',    route: '',         nav: 'home',

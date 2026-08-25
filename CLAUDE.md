@@ -8,10 +8,47 @@ The website for **Katty &amp; Co.**, a pet sitting business in Vancouver, BC
 (boarding, day care, drop-in visits, dog walking), owned by Alejandra. Maintained
 by Miguel Monzones.
 
-Deployed via **GitHub Pages** at <https://katty-co.github.io>. Because the repo is
-named `Katty-Co.github.io`, it is the `Katty-Co` org's root Pages site and
-publishes automatically from `main` — there is no Actions workflow and no build
-step *on GitHub's side*. Push to `main` and it goes live within a minute or two.
+Deployed via **GitHub Pages** at the custom domain <https://kattyco.ca>. Because
+the repo is named `Katty-Co.github.io`, it is the `Katty-Co` org's root Pages
+site and publishes automatically from `main` — there is no Actions workflow and
+no build step *on GitHub's side*. Push to `main` and it goes live within a minute
+or two. `katty-co.github.io` 301-redirects to the custom domain.
+
+### The custom domain, and the Cloudflare trap
+
+`kattyco.ca` is registered at GoDaddy but uses **Cloudflare nameservers**
+(`konnor`/`colette.ns.cloudflare.com`) for DNS. `CNAME` at the repo root holds
+`kattyco.ca` and **must not be deleted** — it is what binds the domain to this
+Pages site. It is explicitly whitelisted in `.gitignore`; without that entry the
+`/*` whitelist silently refuses to re-add it if it ever leaves the index.
+
+`ORIGIN` in `tools/build.js` is `https://kattyco.ca`, so canonical, `og:url` and
+`sitemap.xml` all name the custom domain rather than the github.io host.
+
+**If HTTPS breaks with Cloudflare error 525, this is why:** GitHub Pages issues
+its own Let's Encrypt certificate for the custom domain, and it validates over
+HTTP against the domain. If the Cloudflare records for `kattyco.ca` / `www` are
+**proxied** (orange cloud), the validation request never reaches GitHub, so the
+certificate is never issued. Cloudflare then tries HTTPS to an origin holding no
+matching certificate and returns 525. It is a deadlock, not a transient error —
+waiting does not fix it.
+
+The cure is to set both records to **DNS only** (grey cloud) until GitHub reports
+the certificate as issued and *Enforce HTTPS* becomes selectable. After that you
+may re-enable the proxy with SSL/TLS mode **Full (strict)**; leaving it on DNS
+only is also fine, since Pages already fronts the site with its own CDN.
+
+Diagnosing it from the shell:
+
+```bash
+gh api repos/Katty-Co/Katty-Co.github.io/pages --jq '{cname,https_enforced}'
+# https_enforced:false  => no certificate yet
+curl -sI --resolve kattyco.ca:80:185.199.108.153 http://kattyco.ca/ | head -1
+# 200 here proves the origin is fine and the problem is the certificate
+```
+
+Note the MX record points at purelymail, so email is live on this domain.
+MX records are never proxied, so toggling the orange cloud cannot affect mail.
 
 Note: the business is **Katty &amp; Co.**; **Kat** is the resident cat. Both spellings
 are correct in their own context — do not "fix" one into the other.
