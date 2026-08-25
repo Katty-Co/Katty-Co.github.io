@@ -35,6 +35,7 @@
 # ...but not its dependencies or its intermediate captures.
 /tools/node_modules/
 /tools/captured/
+/tools/captured.prev/
 /tools/package-lock.json
 
 # Never track, even if moved inside a whitelisted folder

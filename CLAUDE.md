@@ -72,15 +72,25 @@ are correct in their own context — do not "fix" one into the other.
 ### 1. The seven `index.html` files are generated. Do not hand-edit them.
 
 They are compiled from the Claude Design canvas sources that live **outside this
-repo**, in `Website Pages/` in the parent folder:
+repo**, in the parent folder:
 
 ```
-Website Pages/
+Alejandra's Pet-Sitting Website/
   index.dc.html  services.dc.html  about.dc.html  pack.dc.html
   reviews.dc.html  faq.dc.html  booking.dc.html
   SiteHeader.dc.html  SiteFooter.dc.html  PawStrip.dc.html
-  support.js   img/
+  support.js   img/   uploads/
 ```
+
+That folder has been renamed at least once (it was `Website Pages/`). `SRC` in
+`tools/build.js` holds the current name and is overridable with `KATCO_SRC`, so
+point that at the folder rather than moving the folder to suit the build.
+
+**The export does not always ship every file it references.** `about.dc.html`
+points at `./img_8711-mt2otwbv-zvzz.jpg`, which is absent from the current
+export; `ASSET_RENAME` maps it to `img/kat-resident.jpg` and the build falls back
+to the already-processed copy in this repo, warning as it does so. That copy is
+now the only one that exists — do not delete `img/kat-resident.jpg`.
 
 Edit those in the canvas, then re-run the compiler (below). Any change you make
 directly to a generated `index.html` will be silently destroyed on the next build.
@@ -99,7 +109,7 @@ Shipping that directly would mean a blank page until third-party JS arrives, no
 SEO, and a hard dependency on a CDN staying up. So the build **runs the real
 runtime once, locally, and freezes the result**:
 
-1. **Serve** `Website Pages/` over HTTP (the runtime uses `fetch` for
+1. **Serve** the canvas source folder over HTTP (the runtime uses `fetch` for
    `<dc-import>`, so `file://` will not work).
 2. **Open each page in a browser** and let the runtime render it.
 3. **Capture** `document.documentElement.outerHTML` into `tools/captured/<page>.html`,

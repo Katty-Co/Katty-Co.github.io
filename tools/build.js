@@ -11,7 +11,7 @@ const path = require('path');
 
 const CAP = path.join(__dirname, 'captured');
 const OUT = process.env.KATCO_OUT || path.resolve(__dirname, '..');
-const SRC = process.env.KATCO_SRC || path.resolve(__dirname, '../../Website Pages');
+const SRC = process.env.KATCO_SRC || path.resolve(__dirname, "../../Alejandra's Pet-Sitting Website");
 const FORMSPREE = 'https://formspree.io/f/xjybqoar';
 // The site is served at the custom domain; katty-co.github.io 301s here.
 // Canonical/OG/sitemap URLs must name the domain we actually promote.
@@ -431,11 +431,18 @@ for (const p of PAGES) {
 fs.mkdirSync(path.join(OUT, 'img'), { recursive: true });
 const UNRENAME = Object.fromEntries(Object.entries(ASSET_RENAME).map(([k, v]) => [v, k]));
 const MAX_BYTES = 900 * 1024;   // anything larger is a raw camera file, not a web image
-let copied = 0, missing = [], shrunk = [], stripped = [], rotated = [];
+let copied = 0, missing = [], shrunk = [], stripped = [], rotated = [], reused = [];
 for (const rel of referenced) {
   const from = path.join(SRC, UNRENAME[rel] || rel);
-  if (!fs.existsSync(from)) { missing.push(rel); continue; }
   const to = path.join(OUT, rel);
+  if (!fs.existsSync(from)) {
+    // The canvas can reference a file a later export stopped shipping. If we
+    // already have a processed copy in place, keep it rather than breaking the
+    // page — but say so loudly, because the source of truth is now only here.
+    if (fs.existsSync(to)) { reused.push(rel); copied++; continue; }
+    missing.push(rel);
+    continue;
+  }
   fs.copyFileSync(from, to);
   copied++;
   // bake in EXIF rotation BEFORE the metadata carrying it gets stripped
@@ -500,6 +507,7 @@ console.table(report);
 console.log('hover rules generated:', hoverCss.length);
 console.log(failures ? '\n*** ' + failures + ' GUARD FAILURE(S) ***' : '\nguards: all pages clean');
 console.log('images copied:', copied);
+reused.forEach(s => console.warn('  ! reused existing ' + s + ' — not present in the canvas export'));
 rotated.forEach(s => console.log('  rotated ' + s));
 shrunk.forEach(s => console.log('  downscaled ' + s));
 if (stripped.length) console.log('  stripped EXIF/GPS from: ' + stripped.join(', '));

@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>.scp0:hover { transform: rotateY(180deg) !important; }
+<style>.scp0:hover { animation: 0.5s ease-in-out 0s 1 normal none running cardJig !important; }
 .scp1:hover { background: rgb(247, 190, 69) !important; color: rgb(43, 29, 24) !important; }
 .scp2:hover { background: rgb(92, 195, 201) !important; color: rgb(43, 29, 24) !important; }
 .scp3:hover { background: rgb(183, 155, 230) !important; color: rgb(43, 29, 24) !important; }
@@ -14,7 +14,7 @@
 .scp8:active { background: rgb(92, 195, 201) !important; }
 .scp9:active { background: rgb(183, 155, 230) !important; }
 .scpa:active { background: rgb(244, 121, 91) !important; }
-.scpb:active { transform: translate(2px, 2px) !important; box-shadow: rgb(43, 29, 24) 3px 3px 0px !important; }</style><meta name="viewport" content="width=device-width, initial-scale=1"><title>The pack — Katty &amp; Co.</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&amp;family=Nunito:wght@400;600;700&amp;family=Space+Mono:wght@700&amp;display=swap" rel="stylesheet"><style>
+.scpb:active { transform: translate(2px, 2px) !important; box-shadow: rgb(43, 29, 24) 3px 3px 0px !important; }</style><meta name="viewport" content="width=device-width, initial-scale=1"><title>The Pack — Katty &amp; Co.</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&amp;family=Nunito:wght@400;600;700&amp;family=Space+Mono:wght@700&amp;display=swap" rel="stylesheet"><style>
   *, *::before, *::after { box-sizing: border-box; }
   body { margin: 0; background: #FFF4E4; color: #2B1D18; font-family: 'Nunito', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
   a { color: #C9503A; text-decoration: none; }
@@ -25,6 +25,7 @@
   @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @keyframes popIn { from { transform: scale(.6) rotate(-8deg); opacity: 0; } to { transform: scale(1) rotate(0); opacity: 1; } }
+  @keyframes cardJig { 0%,100% { transform: rotate(0) translateY(0); } 25% { transform: rotate(-2.2deg) translateY(-5px); } 60% { transform: rotate(1.8deg) translateY(-2px); } }
   [data-stats-grid] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   @media (max-width: 1080px) { [data-stats-grid] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 560px) { [data-stats-grid] { grid-template-columns: minmax(0, 1fr); } }
@@ -34,7 +35,7 @@
 <link rel="canonical" href="https://kattyco.ca/pack/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Katty &amp; Co.">
-<meta property="og:title" content="The pack — Katty &amp; Co.">
+<meta property="og:title" content="The Pack — Katty &amp; Co.">
 <meta property="og:description" content="Meet the dogs and cats who stay with Katty &amp; Co. in Vancouver, BC — the regulars, the puppies and the seniors.">
 <meta property="og:url" content="https://kattyco.ca/pack/">
 <meta property="og:image" content="https://kattyco.ca/img/hero-a.jpg">
@@ -136,14 +137,14 @@
   </div></div></div>
 
   <main data-screen-label="The Pack" style="max-width: 1200px; margin: 0px auto; padding: clamp(52px, 7vw, 80px) clamp(20px, 5vw, 32px) clamp(84px, 10vw, 124px);">
-    <h1 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: clamp(38px, 7vw, 64px); margin: 0px 0px 12px; line-height: 1.06;">The pack</h1>
+    <h1 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: clamp(38px, 7vw, 64px); margin: 0px 0px 12px; line-height: 1.06;">The Pack</h1>
         
-    <p style="font-size: 20px; max-width: 42em; line-height: 1.55; margin: 0px 0px 10px;">Guest ID cards for some of our regulars. Tap or hover a card to flip it over.</p>
-    <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; background: rgb(247, 190, 69); border: 3px solid rgb(43, 29, 24); border-radius: 999px; padding: 8px 16px; display: inline-block; box-shadow: rgb(43, 29, 24) 4px 4px 0px; margin: 0px 0px clamp(44px, 5.5vw, 60px);">Names &amp; ages are placeholders — send me the real ones</p>
+    <p style="font-size: 20px; max-width: 42em; line-height: 1.55; margin: 0px 0px 10px;">Every guest gets a file. Flip a card to read their official record — snack rating, worst habit, and what they think their job is around here.</p>
+    <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; background: rgb(247, 190, 69); border: 3px solid rgb(43, 29, 24); border-radius: 999px; padding: 8px 16px; display: inline-block; box-shadow: rgb(43, 29, 24) 4px 4px 0px; margin: 0px 0px clamp(44px, 5.5vw, 60px);">13 files on record · 0 complaints · 1 stolen sock</p>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 32px;">
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Nacho">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Nacho">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-01.jpg" alt="Small tan chihuahua mix asleep on a blanket" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -167,8 +168,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Biscuit">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Biscuit">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-02.jpg" alt="Jack Russell puppy with a plush toy" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -192,8 +193,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Sunny">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Sunny">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-03.jpg" alt="Golden retriever grinning on a walk" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -217,8 +218,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Ziggy">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Ziggy">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-04.jpg" alt="Scruffy white terrier with a green ball" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -242,8 +243,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Pepper">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Pepper">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-05.jpg" alt="Wirehaired terrier outside a shop" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -267,8 +268,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Gizmo">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Gizmo">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-06.jpg" alt="Yorkie watching football on TV" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -292,8 +293,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Bruno">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Bruno">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-07.jpg" alt="Fluffy black puppy on a leash by red flowers" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -317,8 +318,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Maple">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Maple">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-08.jpg" alt="Australian shepherd standing on grass" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -342,8 +343,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Frankie">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Frankie">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-09.jpg" alt="Dachshund resting on a couch" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -367,8 +368,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for The Twins">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for The Twins">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-10.jpg" alt="Two puppies asleep together on a blanket" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -392,8 +393,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Cloud">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Cloud">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-11.jpg" alt="White cat and black cat sharing a cat tree" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -417,8 +418,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Jia">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Jia">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-13.jpg" alt="Jia, a grey tabby cat wearing round glasses and a tiny school uniform" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -442,8 +443,8 @@
           </div>
         </div>
       
-        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
-          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Olive">
+        <div class="scp0" style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Olive">
             <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
               <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
                 <img src="/img/pet-12.jpg" alt="Black cat curled up asleep in a soft bed" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
