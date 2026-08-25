@@ -1,0 +1,7 @@
+{
+  "name": "katty-co-build",
+  "private": true,
+  "description": "Compiles the Claude Design canvas sources into the static site at the repo root.",
+  "scripts": { "build": "node build.js" },
+  "dependencies": { "cheerio": "^1.0.0" }
+}

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>.scp0:hover { transform: rotateY(180deg) !important; }
+.scp1:hover { background: rgb(247, 190, 69) !important; color: rgb(43, 29, 24) !important; }
+.scp2:hover { background: rgb(92, 195, 201) !important; color: rgb(43, 29, 24) !important; }
+.scp3:hover { background: rgb(183, 155, 230) !important; color: rgb(43, 29, 24) !important; }
+.scp4:hover { background: rgb(244, 121, 91) !important; color: rgb(43, 29, 24) !important; }
+.scp5:hover { background: rgb(43, 29, 24) !important; color: rgb(247, 190, 69) !important; transform: translate(-2px, -2px) !important; box-shadow: rgb(43, 29, 24) 6px 6px 0px !important; }
+.scp6:active { transform: translate(2px, 2px) !important; box-shadow: rgb(43, 29, 24) 2px 2px 0px !important; }
+.scp7:active { background: rgb(247, 190, 69) !important; }
+.scp8:active { background: rgb(92, 195, 201) !important; }
+.scp9:active { background: rgb(183, 155, 230) !important; }
+.scpa:active { background: rgb(244, 121, 91) !important; }
+.scpb:active { transform: translate(2px, 2px) !important; box-shadow: rgb(43, 29, 24) 3px 3px 0px !important; }</style><meta name="viewport" content="width=device-width, initial-scale=1"><title>The pack — Katty &amp; Co.</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&amp;family=Nunito:wght@400;600;700&amp;family=Space+Mono:wght@700&amp;display=swap" rel="stylesheet"><style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: #FFF4E4; color: #2B1D18; font-family: 'Nunito', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #C9503A; text-decoration: none; }
+  a:hover { color: #2B1D18; }
+  button { font-family: inherit; }
+  input, select, textarea { font-family: inherit; }
+  @keyframes tailWag { 0%,100% { transform: rotate(-14deg); } 50% { transform: rotate(16deg); } }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes popIn { from { transform: scale(.6) rotate(-8deg); opacity: 0; } to { transform: scale(1) rotate(0); opacity: 1; } }
+  [data-stats-grid] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 1080px) { [data-stats-grid] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { [data-stats-grid] { grid-template-columns: minmax(0, 1fr); } }
+  [data-nav="pack"] { background: #F4795B; }
+</style>
+<meta name="description" content="Meet the dogs and cats who stay with Katty &amp; Co. in Vancouver, BC — the regulars, the puppies and the seniors.">
+<link rel="canonical" href="https://katty-co.github.io/pack/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Katty &amp; Co.">
+<meta property="og:title" content="The pack — Katty &amp; Co.">
+<meta property="og:description" content="Meet the dogs and cats who stay with Katty &amp; Co. in Vancouver, BC — the regulars, the puppies and the seniors.">
+<meta property="og:url" content="https://katty-co.github.io/pack/">
+<meta property="og:image" content="https://katty-co.github.io/img/hero-a.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFF4E4">
+<link rel="icon" href="/img/kat-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/img/kat-logo.png">
+<style>[data-nav="pack"]{background:#F4795B}</style>
+<style>
+@media (max-width:880px){ .kc-desktop{display:none!important} }
+@media (min-width:881px){ .kc-mobile{display:none!important} .kc-menu{display:none!important} }
+.kc-menu[hidden]{display:none!important}
+:focus-visible{outline:3px solid #C9503A;outline-offset:2px}
+.kc-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+[data-sent-panel][hidden]{display:none!important}
+[data-pet-block][hidden],[data-crew-block][hidden],[data-cap-note][hidden]{display:none!important}
+.kcs0:hover{background:#F7BE45 !important;color:#2B1D18 !important}
+.kcs1:hover{background:#5CC3C9 !important;color:#2B1D18 !important}
+.kcs2:hover{background:#B79BE6 !important;color:#2B1D18 !important}
+.kcs3:hover{background:#F4795B !important;color:#2B1D18 !important}
+.kcs4:hover{background:#F7BE45 !important;color:#2B1D18 !important}
+.kcs5:hover{background:#5CC3C9 !important;color:#2B1D18 !important}
+.kcs6:hover{background:#2B1D18 !important;color:#F7BE45 !important;transform:translate(-2px,-2px) !important;box-shadow:6px 6px 0 #2B1D18 !important}
+.kcs7:active{transform:translate(2px,2px) !important;box-shadow:2px 2px 0 #2B1D18 !important}
+.kcs8:active{transform:translate(2px,2px) !important;box-shadow:2px 2px 0 #2B1D18 !important}
+.kcs9:active{background:#F7BE45 !important}
+.kcs10:active{background:#5CC3C9 !important}
+.kcs11:active{background:#B79BE6 !important}
+.kcs12:active{background:#F4795B !important}
+.kcs13:active{background:#F7BE45 !important}
+.kcs14:active{background:#5CC3C9 !important}
+.kcs15:active{transform:translate(2px,2px) !important;box-shadow:3px 3px 0 #2B1D18 !important}</style></head>
+<body>
+
+<div id="dc-root"><div class="sc-host"><div style="min-height: 100vh; overflow-x: hidden;">
+
+  <div class="sc-host" style="position: sticky; top: 0px; z-index: 50;"><header style="background:#FFF4E4; border-bottom:4px solid #2B1D18;">
+<div style="max-width:1200px; margin:0 auto; padding:12px clamp(14px,4vw,24px); display:flex; flex-wrap:wrap; align-items:center; gap:clamp(8px,2vw,20px);">
+<a href="/" style="display:flex; align-items:center; gap:10px; flex:none; color:#2B1D18;">
+      <span style="width:clamp(34px,4vw,44px); height:clamp(34px,4vw,44px); border:3px solid #2B1D18; border-radius:14px; background:#F7BE45; display:grid; place-items:center; box-shadow:3px 3px 0 #2B1D18; transform:rotate(-4deg); flex:none; overflow:hidden;">
+        <img src="/img/kat-logo.png" alt="" aria-hidden="true" style="display:block; width:82%; height:82%; object-fit:contain;">
+      </span>
+      <span style="font-family:'Baloo 2',cursive; font-weight:800; font-size:clamp(20px,2.4vw,26px); line-height:1;">Katty &amp; Co.</span>
+    </a>
+<nav style="flex:1 1 160px; min-width:0; display:flex; align-items:center; gap:4px; flex-wrap:nowrap; padding:2px 0;" class="kc-desktop">
+          <a href="/" data-nav="home" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs0">Home</a>
+          <a href="/services/" data-nav="services" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs1">Services</a>
+          <a href="/about/" data-nav="about" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs2">About</a>
+          <a href="/pack/" data-nav="pack" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs3">The Pack</a>
+          <a href="/reviews/" data-nav="reviews" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs4">Reviews</a>
+          <a href="/faq/" data-nav="faq" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs5">FAQ</a>
+      </nav>
+<a href="/booking/" style="flex:none; margin-left:auto; padding:11px clamp(13px,2vw,20px); border:3px solid #2B1D18; border-radius:999px; background:#F4795B; color:#FFFCF6; font-family:'Baloo 2',cursive; font-weight:800; font-size:clamp(15px,1.6vw,17px); white-space:nowrap; box-shadow:4px 4px 0 #2B1D18;" class="kcs6 kc-desktop">Book a stay</a>
+<a href="/booking/" style="margin-left:auto; flex:none; padding:13px 18px; border:3px solid #2B1D18; border-radius:999px; background:#F4795B; color:#FFFCF6; font-family:'Baloo 2',cursive; font-weight:800; font-size:16px; white-space:nowrap; box-shadow:4px 4px 0 #2B1D18;" class="kcs7 kc-mobile">Book</a>
+<button type="button" aria-label="Menu" aria-expanded="false" style="flex:none; width:52px; height:52px; display:grid; place-items:center; gap:0; padding:0; border:3px solid #2B1D18; border-radius:16px; background:#F7BE45; box-shadow:4px 4px 0 #2B1D18; cursor:pointer;" class="kcs8 kc-mobile" data-menu-btn="" aria-controls="kc-menu">
+        <span style="display:flex; flex-direction:column; gap:5px; align-items:center; pointer-events:none;">
+          <span style="display:block; width:24px; height:4px; border-radius:2px; background:#2B1D18;"></span>
+          <span style="display:block; width:24px; height:4px; border-radius:2px; background:#2B1D18;"></span>
+          <span style="display:block; width:24px; height:4px; border-radius:2px; background:#2B1D18;"></span>
+        </span>
+      </button>
+</div>
+<nav style="border-top:4px solid #2B1D18; background:#FFFCF6; padding:14px clamp(14px,4vw,24px) 20px; display:flex; flex-direction:column; gap:8px;" class="kc-menu" id="kc-menu" hidden="hidden">
+        <a href="/" data-nav="home" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs9">Home</a>
+        <a href="/services/" data-nav="services" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs10">Services</a>
+        <a href="/about/" data-nav="about" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs11">About</a>
+        <a href="/pack/" data-nav="pack" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs12">The Pack</a>
+        <a href="/reviews/" data-nav="reviews" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs13">Reviews</a>
+        <a href="/faq/" data-nav="faq" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs14">FAQ</a>
+      <a href="/booking/" style="margin-top:6px; text-align:center; padding:16px; border:3px solid #2B1D18; border-radius:999px; background:#F4795B; color:#FFFCF6; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; box-shadow:5px 5px 0 #2B1D18;" class="kcs15">Book a stay</a>
+    </nav>
+</header></div>
+  <div class="sc-host"><div style="overflow: hidden; border-bottom: 4px solid rgb(43, 29, 24); background: rgb(43, 29, 24); padding: 10px 0px;">
+  <div style="display: flex; gap: 56px; align-items: center; white-space: nowrap; width: max-content; padding-right: 56px; will-change: transform; animation: 22s linear 0s infinite normal none running marquee;">
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-18deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(12deg) translateY(8px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-8deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(20deg) translateY(6px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-14deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(6deg) translateY(9px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-22deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(14deg) translateY(7px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-4deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(18deg) translateY(8px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-16deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(10deg) translateY(5px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-18deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(12deg) translateY(8px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-8deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(20deg) translateY(6px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-14deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(6deg) translateY(9px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-22deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(14deg) translateY(7px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-4deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(18deg) translateY(8px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-16deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(10deg) translateY(5px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+  </div></div></div>
+
+  <main data-screen-label="The Pack" style="max-width: 1200px; margin: 0px auto; padding: clamp(52px, 7vw, 80px) clamp(20px, 5vw, 32px) clamp(84px, 10vw, 124px);">
+    <h1 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: clamp(38px, 7vw, 64px); margin: 0px 0px 12px; line-height: 1.06;">The pack</h1>
+        
+    <p style="font-size: 20px; max-width: 42em; line-height: 1.55; margin: 0px 0px 10px;">Guest ID cards for some of our regulars. Tap or hover a card to flip it over.</p>
+    <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; background: rgb(247, 190, 69); border: 3px solid rgb(43, 29, 24); border-radius: 999px; padding: 8px 16px; display: inline-block; box-shadow: rgb(43, 29, 24) 4px 4px 0px; margin: 0px 0px clamp(44px, 5.5vw, 60px);">Names &amp; ages are placeholders — send me the real ones</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 32px;">
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Nacho">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-01.jpg" alt="Small tan chihuahua mix asleep on a blanket" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Nacho</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">9 yrs</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Chihuahua mix</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(247, 190, 69); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">01</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Nacho</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Professional lap warmer. Will burrow under any blanket within nine seconds of arrival.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Boarding</span></span>
+                <span>Snack rating: <span class="sc-interp">11 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Biscuit">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-02.jpg" alt="Jack Russell puppy with a plush toy" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Biscuit</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">1 yr</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Jack Russell</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(92, 195, 201); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">02</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Biscuit</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Has one toy and strong opinions about who is allowed to touch it. Nobody is.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Day care</span></span>
+                <span>Snack rating: <span class="sc-interp">9 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Sunny">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-03.jpg" alt="Golden retriever grinning on a walk" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Sunny</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">3 yrs</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Golden retriever</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(244, 121, 91); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">03</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Sunny</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Greets every single stranger. Would follow a mildly interested squirrel to Alberta.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Dog walking</span></span>
+                <span>Snack rating: <span class="sc-interp">10 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Ziggy">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-04.jpg" alt="Scruffy white terrier with a green ball" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Ziggy</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">2 yrs</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Terrier mix</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(183, 155, 230); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">04</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Ziggy</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Ball. Ball. Ball. Ball. Nap. Ball.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Day care</span></span>
+                <span>Snack rating: <span class="sc-interp">8 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Pepper">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-05.jpg" alt="Wirehaired terrier outside a shop" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Pepper</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">5 yrs</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Wirehaired terrier</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(247, 190, 69); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">05</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Pepper</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Errand dog. Waits patiently outside every store, judges your purchases afterwards.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Dog walking</span></span>
+                <span>Snack rating: <span class="sc-interp">7 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Gizmo">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-06.jpg" alt="Yorkie watching football on TV" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Gizmo</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">7 yrs</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Yorkshire terrier</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(92, 195, 201); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">06</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Gizmo</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Watches the game with full commitment. Barks at the referee, never at the players.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Boarding</span></span>
+                <span>Snack rating: <span class="sc-interp">10 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Bruno">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-07.jpg" alt="Fluffy black puppy on a leash by red flowers" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Bruno</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">11 wks</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Bernese pup</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(244, 121, 91); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">07</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Bruno</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Enormous feet, tiny brain, perfect boy. Currently learning that sidewalks are not snacks.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Day care</span></span>
+                <span>Snack rating: <span class="sc-interp">10 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Maple">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-08.jpg" alt="Australian shepherd standing on grass" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Maple</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">4 yrs</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Australian shepherd</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(183, 155, 230); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">08</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Maple</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Herds the other dogs into a tidy group and looks to you for confirmation. Middle management.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Dog walking</span></span>
+                <span>Snack rating: <span class="sc-interp">9 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Frankie">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-09.jpg" alt="Dachshund resting on a couch" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Frankie</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">8 yrs</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Dachshund</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(247, 190, 69); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">09</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Frankie</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Couch specialist. Requires exactly one cushion, at a specific angle, no substitutions.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Drop-ins</span></span>
+                <span>Snack rating: <span class="sc-interp">8 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for The Twins">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-10.jpg" alt="Two puppies asleep together on a blanket" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">The Twins</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">10 wks</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Puppy siblings</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(92, 195, 201); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">10</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">The Twins</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">A single unit. Cannot be separated, will not be separated, do not attempt to separate.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Day care</span></span>
+                <span>Snack rating: <span class="sc-interp">10 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Cloud">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-11.jpg" alt="White cat and black cat sharing a cat tree" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Cloud</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">6 yrs</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Domestic shorthair</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(244, 121, 91); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">11</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Cloud</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Tolerated Kat within one afternoon, which is officially a household record.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Cat care</span></span>
+                <span>Snack rating: <span class="sc-interp">6 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Jia">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-13.jpg" alt="Jia, a grey tabby cat wearing round glasses and a tiny school uniform" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Jia</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">Age TBD</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Placeholder — send me her details</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(247, 190, 69); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">13</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Jia</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Placeholder description: turns up in full academic dress and expects to be taken seriously. Send me her real bio and I’ll swap this out.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Cat care</span></span>
+                <span>Snack rating: <span class="sc-interp">10 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div style="perspective: 1400px; height: clamp(410px, 56vw, 450px);">
+          <div role="button" tabindex="0" class="scp0" style="position: relative; width: 100%; height: 100%; cursor: pointer; transform-style: preserve-3d; transform: none; transition: transform 0.55s cubic-bezier(0.5, -0.2, 0.5, 1.25);" data-flip="" aria-pressed="false" aria-label="Flip card for Olive">
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 18px; display: flex; flex-direction: column;">
+              <div style="border: 3px solid rgb(43, 29, 24); border-radius: 16px; overflow: hidden; background: rgb(255, 244, 228);">
+                <img src="/img/pet-12.jpg" alt="Black cat curled up asleep in a soft bed" loading="lazy" decoding="async" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 14px;">
+                <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 28px; margin: 0px;"><span class="sc-interp">Olive</span></h3>
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px;"><span class="sc-interp">11 yrs</span></span>
+              </div>
+              <p style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin: 4px 0px 0px;"><span class="sc-interp">Senior cat, on meds</span></p>
+              <span style="margin-top: auto; font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; opacity: 0.65;">Flip →</span>
+            </div>
+            <div style="position: absolute; inset: 0px; backface-visibility: hidden; transform: rotateY(180deg); background: rgb(183, 155, 230); border: 4px solid rgb(43, 29, 24); border-radius: 24px; box-shadow: rgb(43, 29, 24) 7px 7px 0px; padding: 26px; display: flex; flex-direction: column;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">Guest file no. <span class="sc-interp">12</span></span>
+              <h3 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 8px 0px 12px; line-height: 1;"><span class="sc-interp">Olive</span></h3>
+              <p style="font-size: 16px; line-height: 1.5; margin: 0px 0px 14px;"><span class="sc-interp">Twice-daily medication, taken like a champion in exchange for one specific treat.</span></p>
+              <div style="margin-top: auto; display: grid; gap: 6px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase;">
+                <span>Books: <span class="sc-interp">Drop-ins</span></span>
+                <span>Snack rating: <span class="sc-interp">9 / 10</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </main>
+
+  <div class="sc-host"><footer style="background: rgb(43, 29, 24); color: rgb(255, 244, 228); border-top: 4px solid rgb(43, 29, 24); padding: clamp(64px, 8vw, 92px) clamp(20px, 5vw, 32px) 48px;">
+  <div style="max-width: 1200px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 40px; align-items: start;">
+    <div>
+      <div style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 34px;">Katty &amp; Co.</div>
+      <p style="font-size: 17px; line-height: 1.6; max-width: 26em; margin: 8px 0px 0px;">Boarding, day care, drop-ins and walks in Vancouver, BC. Run by Alejandra Fajardo Beltran, supervised (badly) by Kat.</p>
+    </div>
+    <div style="display: grid; gap: 4px; font-size: 17px;">
+      <a href="/services/" style="color: rgb(247, 190, 69); padding: 11px 0px; justify-self: start;">Services &amp; rates</a>
+      <a href="/about/" style="color: rgb(247, 190, 69); padding: 11px 0px; justify-self: start;">About</a>
+      <a href="/pack/" style="color: rgb(247, 190, 69); padding: 11px 0px; justify-self: start;">The pack</a>
+      <a href="/reviews/" style="color: rgb(247, 190, 69); padding: 11px 0px; justify-self: start;">Reviews</a>
+      <a href="/faq/" style="color: rgb(247, 190, 69); padding: 11px 0px; justify-self: start;">FAQ</a>
+    </div>
+    <div style="display: grid; gap: 4px; font-size: 17px;">
+      <a href="mailto:alefajbel@gmail.com" style="color: rgb(92, 195, 201); padding: 11px 0px; justify-self: start;">alefajbel@gmail.com</a>
+      <a href="https://www.rover.com/members/alejandra-f-experienced-sitter-for-dogs-cats/" target="_blank" rel="noopener" style="color: rgb(92, 195, 201); padding: 11px 0px; justify-self: start;">Rover profile ↗</a>
+      <a href="/booking/" style="color: rgb(92, 195, 201); padding: 11px 0px; justify-self: start;">Booking request</a>
+    </div>
+  </div>
+  <p style="max-width: 1200px; margin: 36px auto 0px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.7;">© 2026 Katty &amp; Co. Pet Care · Vancouver, BC</p></footer></div></div></div></div>
+
+
+
+
+<script src="/assets/site.js" defer=""></script></body></html>

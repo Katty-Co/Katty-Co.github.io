@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>.scp0:hover { transform: translate(-2px, -2px) !important; box-shadow: rgb(43, 29, 24) 5px 5px 0px !important; }
+.scp1:hover { transform: translate(-3px, -3px) !important; box-shadow: rgb(43, 29, 24) 9px 9px 0px !important; }
+.scp2:hover { background: rgb(247, 190, 69) !important; transform: translate(-2px, -2px) !important; box-shadow: rgb(43, 29, 24) 6px 6px 0px !important; }
+.scp3:hover { background: rgb(247, 190, 69) !important; color: rgb(43, 29, 24) !important; }
+.scp4:hover { background: rgb(92, 195, 201) !important; color: rgb(43, 29, 24) !important; }
+.scp5:hover { background: rgb(183, 155, 230) !important; color: rgb(43, 29, 24) !important; }
+.scp6:hover { background: rgb(244, 121, 91) !important; color: rgb(43, 29, 24) !important; }
+.scp7:hover { background: rgb(43, 29, 24) !important; color: rgb(247, 190, 69) !important; transform: translate(-2px, -2px) !important; box-shadow: rgb(43, 29, 24) 6px 6px 0px !important; }
+.scp8:active { transform: translate(2px, 2px) !important; box-shadow: rgb(43, 29, 24) 2px 2px 0px !important; }
+.scp9:active { background: rgb(247, 190, 69) !important; }
+.scpa:active { background: rgb(92, 195, 201) !important; }
+.scpb:active { background: rgb(183, 155, 230) !important; }
+.scpc:active { background: rgb(244, 121, 91) !important; }
+.scpd:active { transform: translate(2px, 2px) !important; box-shadow: rgb(43, 29, 24) 3px 3px 0px !important; }</style><meta name="viewport" content="width=device-width, initial-scale=1"><title>Book a stay — Katty &amp; Co.</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&amp;family=Nunito:wght@400;600;700&amp;family=Space+Mono:wght@700&amp;display=swap" rel="stylesheet"><style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: #FFF4E4; color: #2B1D18; font-family: 'Nunito', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #C9503A; text-decoration: none; }
+  a:hover { color: #2B1D18; }
+  button { font-family: inherit; }
+  input, select, textarea { font-family: inherit; }
+  @keyframes tailWag { 0%,100% { transform: rotate(-14deg); } 50% { transform: rotate(16deg); } }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes popIn { from { transform: scale(.6) rotate(-8deg); opacity: 0; } to { transform: scale(1) rotate(0); opacity: 1; } }
+  [data-stats-grid] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 1080px) { [data-stats-grid] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { [data-stats-grid] { grid-template-columns: minmax(0, 1fr); } }
+</style>
+<meta name="description" content="Ask about dates for boarding, day care, drop-in visits or dog walking in Vancouver, BC. Free meet &amp; greet before the first booking.">
+<link rel="canonical" href="https://katty-co.github.io/booking/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Katty &amp; Co.">
+<meta property="og:title" content="Book a stay — Katty &amp; Co.">
+<meta property="og:description" content="Ask about dates for boarding, day care, drop-in visits or dog walking in Vancouver, BC. Free meet &amp; greet before the first booking.">
+<meta property="og:url" content="https://katty-co.github.io/booking/">
+<meta property="og:image" content="https://katty-co.github.io/img/hero-a.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFF4E4">
+<link rel="icon" href="/img/kat-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/img/kat-logo.png">
+<style>
+@media (max-width:880px){ .kc-desktop{display:none!important} }
+@media (min-width:881px){ .kc-mobile{display:none!important} .kc-menu{display:none!important} }
+.kc-menu[hidden]{display:none!important}
+:focus-visible{outline:3px solid #C9503A;outline-offset:2px}
+.kc-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+[data-sent-panel][hidden]{display:none!important}
+[data-pet-block][hidden],[data-crew-block][hidden],[data-cap-note][hidden]{display:none!important}
+.kcs0:hover{background:#F7BE45 !important;color:#2B1D18 !important}
+.kcs1:hover{background:#5CC3C9 !important;color:#2B1D18 !important}
+.kcs2:hover{background:#B79BE6 !important;color:#2B1D18 !important}
+.kcs3:hover{background:#F4795B !important;color:#2B1D18 !important}
+.kcs4:hover{background:#F7BE45 !important;color:#2B1D18 !important}
+.kcs5:hover{background:#5CC3C9 !important;color:#2B1D18 !important}
+.kcs6:hover{background:#2B1D18 !important;color:#F7BE45 !important;transform:translate(-2px,-2px) !important;box-shadow:6px 6px 0 #2B1D18 !important}
+.kcs7:active{transform:translate(2px,2px) !important;box-shadow:2px 2px 0 #2B1D18 !important}
+.kcs8:active{transform:translate(2px,2px) !important;box-shadow:2px 2px 0 #2B1D18 !important}
+.kcs9:active{background:#F7BE45 !important}
+.kcs10:active{background:#5CC3C9 !important}
+.kcs11:active{background:#B79BE6 !important}
+.kcs12:active{background:#F4795B !important}
+.kcs13:active{background:#F7BE45 !important}
+.kcs14:active{background:#5CC3C9 !important}
+.kcs15:active{transform:translate(2px,2px) !important;box-shadow:3px 3px 0 #2B1D18 !important}</style></head>
+<body data-chip-idle="#FFF4E4">
+
+<div id="dc-root"><div class="sc-host"><div style="min-height: 100vh; overflow-x: hidden;">
+
+  <div class="sc-host" style="position: sticky; top: 0px; z-index: 50;"><header style="background:#FFF4E4; border-bottom:4px solid #2B1D18;">
+<div style="max-width:1200px; margin:0 auto; padding:12px clamp(14px,4vw,24px); display:flex; flex-wrap:wrap; align-items:center; gap:clamp(8px,2vw,20px);">
+<a href="/" style="display:flex; align-items:center; gap:10px; flex:none; color:#2B1D18;">
+      <span style="width:clamp(34px,4vw,44px); height:clamp(34px,4vw,44px); border:3px solid #2B1D18; border-radius:14px; background:#F7BE45; display:grid; place-items:center; box-shadow:3px 3px 0 #2B1D18; transform:rotate(-4deg); flex:none; overflow:hidden;">
+        <img src="/img/kat-logo.png" alt="" aria-hidden="true" style="display:block; width:82%; height:82%; object-fit:contain;">
+      </span>
+      <span style="font-family:'Baloo 2',cursive; font-weight:800; font-size:clamp(20px,2.4vw,26px); line-height:1;">Katty &amp; Co.</span>
+    </a>
+<nav style="flex:1 1 160px; min-width:0; display:flex; align-items:center; gap:4px; flex-wrap:nowrap; padding:2px 0;" class="kc-desktop">
+          <a href="/" data-nav="home" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs0">Home</a>
+          <a href="/services/" data-nav="services" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs1">Services</a>
+          <a href="/about/" data-nav="about" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs2">About</a>
+          <a href="/pack/" data-nav="pack" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs3">The Pack</a>
+          <a href="/reviews/" data-nav="reviews" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs4">Reviews</a>
+          <a href="/faq/" data-nav="faq" style="padding:8px 12px; border-radius:10px; font-weight:700; white-space:nowrap; color:#2B1D18;" class="kcs5">FAQ</a>
+      </nav>
+<a href="/booking/" style="flex:none; margin-left:auto; padding:11px clamp(13px,2vw,20px); border:3px solid #2B1D18; border-radius:999px; background:#F4795B; color:#FFFCF6; font-family:'Baloo 2',cursive; font-weight:800; font-size:clamp(15px,1.6vw,17px); white-space:nowrap; box-shadow:4px 4px 0 #2B1D18;" class="kcs6 kc-desktop">Book a stay</a>
+<a href="/booking/" style="margin-left:auto; flex:none; padding:13px 18px; border:3px solid #2B1D18; border-radius:999px; background:#F4795B; color:#FFFCF6; font-family:'Baloo 2',cursive; font-weight:800; font-size:16px; white-space:nowrap; box-shadow:4px 4px 0 #2B1D18;" class="kcs7 kc-mobile">Book</a>
+<button type="button" aria-label="Menu" aria-expanded="false" style="flex:none; width:52px; height:52px; display:grid; place-items:center; gap:0; padding:0; border:3px solid #2B1D18; border-radius:16px; background:#F7BE45; box-shadow:4px 4px 0 #2B1D18; cursor:pointer;" class="kcs8 kc-mobile" data-menu-btn="" aria-controls="kc-menu">
+        <span style="display:flex; flex-direction:column; gap:5px; align-items:center; pointer-events:none;">
+          <span style="display:block; width:24px; height:4px; border-radius:2px; background:#2B1D18;"></span>
+          <span style="display:block; width:24px; height:4px; border-radius:2px; background:#2B1D18;"></span>
+          <span style="display:block; width:24px; height:4px; border-radius:2px; background:#2B1D18;"></span>
+        </span>
+      </button>
+</div>
+<nav style="border-top:4px solid #2B1D18; background:#FFFCF6; padding:14px clamp(14px,4vw,24px) 20px; display:flex; flex-direction:column; gap:8px;" class="kc-menu" id="kc-menu" hidden="hidden">
+        <a href="/" data-nav="home" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs9">Home</a>
+        <a href="/services/" data-nav="services" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs10">Services</a>
+        <a href="/about/" data-nav="about" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs11">About</a>
+        <a href="/pack/" data-nav="pack" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs12">The Pack</a>
+        <a href="/reviews/" data-nav="reviews" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs13">Reviews</a>
+        <a href="/faq/" data-nav="faq" style="padding:14px 16px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; color:#2B1D18;" class="kcs14">FAQ</a>
+      <a href="/booking/" style="margin-top:6px; text-align:center; padding:16px; border:3px solid #2B1D18; border-radius:999px; background:#F4795B; color:#FFFCF6; font-family:'Baloo 2',cursive; font-weight:800; font-size:20px; box-shadow:5px 5px 0 #2B1D18;" class="kcs15">Book a stay</a>
+    </nav>
+</header></div>
+  <div class="sc-host"><div style="overflow: hidden; border-bottom: 4px solid rgb(43, 29, 24); background: rgb(43, 29, 24); padding: 10px 0px;">
+  <div style="display: flex; gap: 56px; align-items: center; white-space: nowrap; width: max-content; padding-right: 56px; will-change: transform; animation: 22s linear 0s infinite normal none running marquee;">
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-18deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(12deg) translateY(8px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-8deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(20deg) translateY(6px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-14deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(6deg) translateY(9px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-22deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(14deg) translateY(7px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-4deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(18deg) translateY(8px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-16deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(10deg) translateY(5px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-18deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(12deg) translateY(8px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-8deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(20deg) translateY(6px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-14deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(6deg) translateY(9px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-22deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(14deg) translateY(7px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-4deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F7BE45"></ellipse><circle cx="7" cy="17" r="5" fill="#F7BE45"></circle><circle cx="16" cy="10" r="5" fill="#F7BE45"></circle><circle cx="26" cy="10" r="5" fill="#F7BE45"></circle><circle cx="34" cy="17" r="5" fill="#F7BE45"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(18deg) translateY(8px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#5CC3C9"></ellipse><circle cx="7" cy="17" r="5" fill="#5CC3C9"></circle><circle cx="16" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="26" cy="10" r="5" fill="#5CC3C9"></circle><circle cx="34" cy="17" r="5" fill="#5CC3C9"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(-16deg); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#F4795B"></ellipse><circle cx="7" cy="17" r="5" fill="#F4795B"></circle><circle cx="16" cy="10" r="5" fill="#F4795B"></circle><circle cx="26" cy="10" r="5" fill="#F4795B"></circle><circle cx="34" cy="17" r="5" fill="#F4795B"></circle></svg>
+      <svg viewBox="0 0 40 44" width="26" height="28" style="transform: rotate(10deg) translateY(5px); flex: 0 0 auto;"><ellipse cx="20" cy="30" rx="12" ry="10" fill="#B79BE6"></ellipse><circle cx="7" cy="17" r="5" fill="#B79BE6"></circle><circle cx="16" cy="10" r="5" fill="#B79BE6"></circle><circle cx="26" cy="10" r="5" fill="#B79BE6"></circle><circle cx="34" cy="17" r="5" fill="#B79BE6"></circle></svg>
+  </div></div></div>
+
+  <main data-screen-label="Contact" style="max-width: 1100px; margin: 0px auto; padding: clamp(52px, 7vw, 80px) clamp(20px, 5vw, 32px) clamp(84px, 10vw, 124px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(28px, 4vw, 48px); align-items: start;">
+    <div style="display: grid; gap: clamp(26px, 3.5vw, 38px); align-content: start; min-width: 0px;">
+    <div>
+      <h1 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: clamp(36px, 6.4vw, 60px); margin: 0px 0px 12px; line-height: 1.06;">Tell me about your pet</h1>
+      <p style="font-size: 19px; line-height: 1.6; margin: 0px;">A few quick questions, then I'll get back to you with availability and set up a free meet &amp; greet.</p>
+    </div>
+    <div style="min-width: 0px;">
+      
+      
+      <form style="background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 26px; padding: clamp(26px, 4vw, 36px); box-shadow: rgb(43, 29, 24) 9px 9px 0px; display: grid; gap: 24px;" action="https://formspree.io/f/xjybqoar" method="POST" novalidate=""><input type="hidden" name="pet_count" id="f-pet_count" value="1"><input type="hidden" name="service" id="f-service" value="Boarding"><input type="hidden" name="_subject" value="New booking enquiry from the Katty &amp; Co. website"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="kc-sr">
+        <div style="display: grid; gap: 9px;">
+          <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;">How many pets?</span>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            
+              <button type="button" class="scp0" style="min-width: 64px; padding: 11px 18px; border: 3px solid rgb(43, 29, 24); border-radius: 999px; background: rgb(255, 244, 228); font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 17px; cursor: pointer; box-shadow: rgb(43, 29, 24) 3px 3px 0px;" data-chip="count" data-val="1"><span class="sc-interp">1</span></button>
+            
+              <button type="button" class="scp0" style="min-width: 64px; padding: 11px 18px; border: 3px solid rgb(43, 29, 24); border-radius: 999px; background: rgb(92, 195, 201); font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 17px; cursor: pointer; box-shadow: rgb(43, 29, 24) 3px 3px 0px;" data-chip="count" data-val="2"><span class="sc-interp">2</span></button>
+            
+              <button type="button" class="scp0" style="min-width: 64px; padding: 11px 18px; border: 3px solid rgb(43, 29, 24); border-radius: 999px; background: rgb(255, 244, 228); font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 17px; cursor: pointer; box-shadow: rgb(43, 29, 24) 3px 3px 0px;" data-chip="count" data-val="3+"><span class="sc-interp">3+</span></button>
+            
+          </div>
+        </div>
+        
+          <div style="border: 3px solid rgb(43, 29, 24); border-radius: 20px; background: rgb(255, 244, 228); padding: 22px; display: grid; gap: 18px;" data-pet-block="1">
+            <span style="justify-self: start; font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 18px; background: rgb(247, 190, 69); border: 3px solid rgb(43, 29, 24); border-radius: 999px; padding: 5px 16px; box-shadow: rgb(43, 29, 24) 3px 3px 0px;" data-pet-legend="1"><span class="sc-interp">Pet 1</span></span>
+            <label style="display: grid; gap: 7px; min-width: 0px;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;">Name</span>
+              <input placeholder="Nacho" value="" style="padding: 14px 16px; border: 3px solid rgb(43, 29, 24); border-radius: 14px; background: rgb(255, 252, 246); font-size: 17px; width: 100%; min-width: 0px;" name="pet1_name">
+            </label>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 18px;">
+              <label style="display: grid; gap: 7px; min-width: 0px;">
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;">Dog or cat?</span>
+                <select style="padding: 14px 16px; border: 3px solid rgb(43, 29, 24); border-radius: 14px; background: rgb(255, 252, 246); font-size: 17px; width: 100%; min-width: 0px;" name="pet1_species">
+                  <option>Dog</option>
+                  <option>Cat</option>
+                </select>
+              </label>
+              <label style="display: grid; gap: 7px; min-width: 0px;">
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;">Breed &amp; age</span>
+                <input placeholder="Chihuahua mix, 9" value="" style="padding: 14px 16px; border: 3px solid rgb(43, 29, 24); border-radius: 14px; background: rgb(255, 252, 246); font-size: 17px; width: 100%; min-width: 0px;" name="pet1_breed">
+              </label>
+            </div>
+          </div>
+        
+          <div style="border: 3px solid rgb(43, 29, 24); border-radius: 20px; background: rgb(255, 244, 228); padding: 22px; display: grid; gap: 18px;" data-pet-block="2">
+            <span style="justify-self: start; font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 18px; background: rgb(247, 190, 69); border: 3px solid rgb(43, 29, 24); border-radius: 999px; padding: 5px 16px; box-shadow: rgb(43, 29, 24) 3px 3px 0px;" data-pet-legend="2"><span class="sc-interp">Pet 2</span></span>
+            <label style="display: grid; gap: 7px; min-width: 0px;">
+              <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;">Name</span>
+              <input placeholder="Biscuit" value="" style="padding: 14px 16px; border: 3px solid rgb(43, 29, 24); border-radius: 14px; background: rgb(255, 252, 246); font-size: 17px; width: 100%; min-width: 0px;" name="pet2_name">
+            </label>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 18px;">
+              <label style="display: grid; gap: 7px; min-width: 0px;">
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;">Dog or cat?</span>
+                <select style="padding: 14px 16px; border: 3px solid rgb(43, 29, 24); border-radius: 14px; background: rgb(255, 252, 246); font-size: 17px; width: 100%; min-width: 0px;" name="pet2_species">
+                  <option>Dog</option>
+                  <option>Cat</option>
+                </select>
+              </label>
+              <label style="display: grid; gap: 7px; min-width: 0px;">
+                <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;">Breed &amp; age</span>
+                <input placeholder="Jack Russell, 1" value="" style="padding: 14px 16px; border: 3px solid rgb(43, 29, 24); border-radius: 14px; background: rgb(255, 252, 246); font-size: 17px; width: 100%; min-width: 0px;" name="pet2_breed">
+              </label>
+            </div>
+          </div><label style="display: grid; gap: 7px; min-width: 0px;" data-crew-block="" hidden="hidden">
+            <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;">Tell me about everyone</span>
+            <span style="font-size: 15px; line-height: 1.5; opacity: 0.75;">One per line: name, dog or cat, breed and age. Anything unusual is welcome here too.</span>
+            <textarea rows="5" placeholder="Nacho — dog, chihuahua mix, 9
+Biscuit — dog, jack russell, 1
+Olive — cat, senior, on meds" style="padding: 14px 16px; border: 3px solid rgb(43, 29, 24); border-radius: 14px; background: rgb(255, 244, 228); font-size: 17px; line-height: 1.5; resize: vertical;" name="crew"></textarea>
+          </label><p data-cap-note="" hidden="" style="margin:10px 0 0; padding:14px 16px; border:3px solid #2B1D18; border-radius:16px; background:#F7BE45; font-weight:700; font-size:15px;"></p>
+        
+        
+        <div style="display: grid; gap: 9px;">
+          <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;">What do you need?</span>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            
+              <button type="button" class="scp0" style="padding: 11px 18px; border: 3px solid rgb(43, 29, 24); border-radius: 999px; background: rgb(247, 190, 69); font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 17px; cursor: pointer; box-shadow: rgb(43, 29, 24) 3px 3px 0px;" data-chip="service" data-val="Boarding"><span class="sc-interp">Boarding</span></button>
+            
+              <button type="button" class="scp0" style="padding: 11px 18px; border: 3px solid rgb(43, 29, 24); border-radius: 999px; background: rgb(255, 244, 228); font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 17px; cursor: pointer; box-shadow: rgb(43, 29, 24) 3px 3px 0px;" data-chip="service" data-val="Day care"><span class="sc-interp">Day care</span></button>
+            
+              <button type="button" class="scp0" style="padding: 11px 18px; border: 3px solid rgb(43, 29, 24); border-radius: 999px; background: rgb(255, 244, 228); font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 17px; cursor: pointer; box-shadow: rgb(43, 29, 24) 3px 3px 0px;" data-chip="service" data-val="Drop-ins"><span class="sc-interp">Drop-ins</span></button>
+            
+              <button type="button" class="scp0" style="padding: 11px 18px; border: 3px solid rgb(43, 29, 24); border-radius: 999px; background: rgb(255, 244, 228); font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 17px; cursor: pointer; box-shadow: rgb(43, 29, 24) 3px 3px 0px;" data-chip="service" data-val="Walks"><span class="sc-interp">Walks</span></button>
+            
+          </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 20px;">
+          <label style="display: grid; gap: 7px; min-width: 0px;">
+            <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;">From</span>
+            <input type="date" value="" style="padding: 14px 16px; border: 3px solid rgb(43, 29, 24); border-radius: 14px; background: rgb(255, 244, 228); font-size: 17px; width: 100%; min-width: 0px;" name="date_from">
+          </label>
+          <label style="display: grid; gap: 7px; min-width: 0px;">
+            <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;">To</span>
+            <input type="date" value="" style="padding: 14px 16px; border: 3px solid rgb(43, 29, 24); border-radius: 14px; background: rgb(255, 244, 228); font-size: 17px; width: 100%; min-width: 0px;" name="date_to">
+          </label>
+        </div>
+        <div data-contact="" style="display:grid; gap:14px; margin-top:18px;"><h3 style="margin:0; font-family:'Baloo 2',cursive; font-weight:800; font-size:clamp(19px,2.2vw,22px);">How do I reach you?</h3><div style="display:grid; gap:7px; min-width:0;"><label for="f-name" style="font-family:'Baloo 2',cursive; font-weight:800; font-size:15px; color:#2B1D18;">Your name</label><input type="text" name="name" id="f-name" placeholder="Alex Rivera" style="width:100%; padding:12px 14px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-size:16px; color:#2B1D18; font-family:inherit;" required=""></div><div style="display:grid; gap:7px; min-width:0;"><label for="f-email" style="font-family:'Baloo 2',cursive; font-weight:800; font-size:15px; color:#2B1D18;">Email</label><input type="email" name="email" id="f-email" placeholder="you@example.com" style="width:100%; padding:12px 14px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-size:16px; color:#2B1D18; font-family:inherit;" required=""></div><div style="display:grid; gap:7px; min-width:0;"><label for="f-phone" style="font-family:'Baloo 2',cursive; font-weight:800; font-size:15px; color:#2B1D18;">Phone <span style="font-weight:600;opacity:.65">(optional)</span></label><input type="tel" name="phone" id="f-phone" placeholder="604 555 0134" style="width:100%; padding:12px 14px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-size:16px; color:#2B1D18; font-family:inherit;"></div><div style="display:grid; gap:7px; min-width:0;"><label for="f-notes" style="font-family:'Baloo 2',cursive; font-weight:800; font-size:15px; color:#2B1D18;">Anything else I should know? <span style="font-weight:600;opacity:.65">(optional)</span></label><textarea name="notes" id="f-notes" rows="3" placeholder="Medication, routines, nervous around other dogs, favourite games…" style="width:100%; padding:12px 14px; border:3px solid #2B1D18; border-radius:14px; background:#FFF4E4; font-size:16px; color:#2B1D18; font-family:inherit; resize:vertical;"></textarea></div></div><button type="submit" class="scp1" style="padding: 17px 28px; border: 3px solid rgb(43, 29, 24); border-radius: 999px; background: rgb(244, 121, 91); color: rgb(255, 252, 246); font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 22px; box-shadow: rgb(43, 29, 24) 6px 6px 0px; cursor: pointer; justify-self: start;">Send it over</button>
+      </form><div style="background: rgb(92, 195, 201); border: 4px solid rgb(43, 29, 24); border-radius: 26px; padding: 36px; box-shadow: rgb(43, 29, 24) 9px 9px 0px;" data-sent-panel="" hidden="hidden" role="status" tabindex="-1">
+          <div style="font-size: 44px; animation: 0.5s ease 0s 1 normal none running popIn;">🐾</div>
+          <h2 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 36px; margin: 10px 0px;">Got it — I've got <span class="sc-interp">your pets</span> down</h2>
+          <p style="font-size: 18px; line-height: 1.6; margin: 0px 0px 20px;">I'll reply within a few hours with availability and next steps. If it's urgent or last-minute, email me directly — or message me on Rover, which pings my phone.</p>
+          <button style="padding: 12px 20px; border: 3px solid rgb(43, 29, 24); border-radius: 999px; background: rgb(255, 252, 246); font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 18px; box-shadow: rgb(43, 29, 24) 4px 4px 0px; cursor: pointer;" data-sent-reset="" type="button" href="#">Send another</button>
+        </div>
+      
+    </div>
+    </div>
+    <aside style="display: grid; gap: 30px; align-content: start; min-width: 0px;">
+      <div style="background: rgb(183, 155, 230); border: 4px solid rgb(43, 29, 24); border-radius: 26px; padding: 32px; box-shadow: rgb(43, 29, 24) 8px 8px 0px;">
+        <h2 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 30px; margin: 0px 0px 10px;">Rather go through Rover?</h2>
+        <p style="font-size: 17px; line-height: 1.55; margin: 0px 0px 14px;">Totally fine — you'll get Rover's booking protection and vet line, and my profile has live availability. Booking with me directly is simpler, and it's where my reviews came from.</p>
+        <p style="font-size: 16px; line-height: 1.55; margin: 0px 0px 18px; background: rgb(255, 252, 246); border: 3px solid rgb(43, 29, 24); border-radius: 16px; padding: 14px 16px;"><strong>Worth knowing:</strong> Rover adds an 11% service fee for owners, capped at $65 CAD per booking. Booking direct skips that. I don't carry pet insurance myself — if you already have a policy, it typically covers your pet either way.</p>
+        <a href="https://www.rover.com/members/alejandra-f-experienced-sitter-for-dogs-cats/" target="_blank" rel="noopener" class="scp2" style="display: inline-block; padding: 13px 22px; border: 3px solid rgb(43, 29, 24); border-radius: 999px; background: rgb(255, 252, 246); color: rgb(43, 29, 24); font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 18px; box-shadow: rgb(43, 29, 24) 4px 4px 0px;">Open my Rover profile ↗</a>
+      </div>
+      <div style="background: rgb(255, 252, 246); border: 4px solid rgb(43, 29, 24); border-radius: 26px; padding: 32px; box-shadow: rgb(43, 29, 24) 8px 8px 0px;">
+        <h2 style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 26px; margin: 0px 0px 12px;">Straight to my inbox</h2>
+        <p style="margin: 0px 0px 6px; font-size: 17px;"><a href="mailto:alefajbel@gmail.com">alefajbel@gmail.com</a></p>
+        <p style="margin: 0px; font-size: 17px;">Vancouver, BC</p>
+      </div>
+      <div style="background: rgb(255, 244, 228); border: 4px dashed rgb(43, 29, 24); border-radius: 26px; padding: 24px;">
+        <p style="margin: 0px; font-size: 16px; line-height: 1.6;"><strong>Good to mention:</strong> food allergies, medications, specific routines, and anything that makes your pet nervous. I'd rather know too much.</p>
+      </div>
+    </aside>
+  </main>
+
+  <div class="sc-host"><footer style="background: rgb(43, 29, 24); color: rgb(255, 244, 228); border-top: 4px solid rgb(43, 29, 24); padding: clamp(64px, 8vw, 92px) clamp(20px, 5vw, 32px) 48px;">
+  <div style="max-width: 1200px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 40px; align-items: start;">
+    <div>
+      <div style="font-family: &quot;Baloo 2&quot;, cursive; font-weight: 800; font-size: 34px;">Katty &amp; Co.</div>
+      <p style="font-size: 17px; line-height: 1.6; max-width: 26em; margin: 8px 0px 0px;">Boarding, day care, drop-ins and walks in Vancouver, BC. Run by Alejandra Fajardo Beltran, supervised (badly) by Kat.</p>
+    </div>
+    <div style="display: grid; gap: 4px; font-size: 17px;">
+      <a href="/services/" style="color: rgb(247, 190, 69); padding: 11px 0px; justify-self: start;">Services &amp; rates</a>
+      <a href="/about/" style="color: rgb(247, 190, 69); padding: 11px 0px; justify-self: start;">About</a>
+      <a href="/pack/" style="color: rgb(247, 190, 69); padding: 11px 0px; justify-self: start;">The pack</a>
+      <a href="/reviews/" style="color: rgb(247, 190, 69); padding: 11px 0px; justify-self: start;">Reviews</a>
+      <a href="/faq/" style="color: rgb(247, 190, 69); padding: 11px 0px; justify-self: start;">FAQ</a>
+    </div>
+    <div style="display: grid; gap: 4px; font-size: 17px;">
+      <a href="mailto:alefajbel@gmail.com" style="color: rgb(92, 195, 201); padding: 11px 0px; justify-self: start;">alefajbel@gmail.com</a>
+      <a href="https://www.rover.com/members/alejandra-f-experienced-sitter-for-dogs-cats/" target="_blank" rel="noopener" style="color: rgb(92, 195, 201); padding: 11px 0px; justify-self: start;">Rover profile ↗</a>
+      <a href="/booking/" style="color: rgb(92, 195, 201); padding: 11px 0px; justify-self: start;">Booking request</a>
+    </div>
+  </div>
+  <p style="max-width: 1200px; margin: 36px auto 0px; font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.7;">© 2026 Katty &amp; Co. Pet Care · Vancouver, BC</p></footer></div></div></div></div>
+
+
+
+
+<script src="/assets/site.js" defer=""></script></body></html>

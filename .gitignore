@@ -10,12 +10,33 @@
 !/.nojekyll
 !/CLAUDE.md
 !/README.md
-!/index.html
+!/robots.txt
+!/sitemap.xml
 !/brand/
+
+# The built site: one folder per route, plus shared assets.
+!/index.html
+!/about/
+!/booking/
+!/faq/
+!/pack/
+!/reviews/
+!/services/
+!/assets/
+!/img/
+
+# The compiler that produces the above.
+!/tools/
+
+# ...but not its dependencies or its intermediate captures.
+/tools/node_modules/
+/tools/captured/
+/tools/package-lock.json
 
 # Never track, even if moved inside a whitelisted folder
 .DS_Store
 Thumbs.db
+node_modules/
 *.zip
 *.mov
 *.MOV
