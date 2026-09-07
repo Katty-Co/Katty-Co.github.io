@@ -17,6 +17,32 @@ const FORMSPREE = 'https://formspree.io/f/xjybqoar';
 // Canonical/OG/sitemap URLs must name the domain we actually promote.
 const ORIGIN = process.env.KATCO_ORIGIN || 'https://kattyco.ca';
 
+// The link-preview card. Platforms crop this to their own aspect ratio, so the
+// brand-critical content must sit inside the centred 630x600 box; see CLAUDE.md.
+const OG_IMAGE = 'img/og-preview.png';
+const OG_ALT = 'Katty & Co. — your pet\'s second favourite family. kattyco.ca';
+
+/* Read pixel dimensions straight out of a PNG or JPEG header.
+   og:image:width/height must match the file, and hardcoding them means they
+   silently rot the first time the image is resized. */
+function imageSize(file) {
+  const b = fs.readFileSync(file);
+  if (b.length > 24 && b.toString('hex', 0, 8) === '89504e470d0a1a0a')      // PNG
+    return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+  if (b.length > 4 && b[0] === 0xFF && b[1] === 0xD8) {                      // JPEG
+    let i = 2;
+    while (i < b.length - 9) {
+      if (b[i] !== 0xFF) { i++; continue; }
+      const m = b[i + 1];
+      if (m >= 0xC0 && m <= 0xCF && m !== 0xC4 && m !== 0xC8 && m !== 0xCC)
+        return { h: b.readUInt16BE(i + 5), w: b.readUInt16BE(i + 7) };
+      if (m === 0xD8 || m === 0xD9 || (m >= 0xD0 && m <= 0xD7)) { i += 2; continue; }
+      i += 2 + b.readUInt16BE(i + 2);
+    }
+  }
+  throw new Error('imageSize: unrecognised image format: ' + file);
+}
+
 const PAGES = [
   { key: 'index',    route: '',         nav: 'home',
     desc: 'Small-group pet boarding, doggy day care, drop-in visits and dog walking in Vancouver, BC. Star Sitter on Rover, background checked, photo updates on every booking.' },
@@ -206,8 +232,15 @@ function addMeta($, page) {
     '\n<meta property="og:title" content="' + title.replace(/"/g, '&quot;') + '">' +
     '\n<meta property="og:description" content="' + page.desc.replace(/"/g, '&quot;') + '">' +
     '\n<meta property="og:url" content="' + canonical + '">' +
-    '\n<meta property="og:image" content="' + ORIGIN + '/img/hero-a.jpg">' +
+    '\n<meta property="og:image" content="' + ORIGIN + '/' + OG_IMAGE + '">' +
+    '\n<meta property="og:image:width" content="' + ogSize.w + '">' +
+    '\n<meta property="og:image:height" content="' + ogSize.h + '">' +
+    '\n<meta property="og:image:type" content="image/png">' +
+    '\n<meta property="og:image:alt" content="' + OG_ALT.replace(/"/g, '&quot;') + '">' +
     '\n<meta name="twitter:card" content="summary_large_image">' +
+    '\n<meta name="twitter:image" content="' + ORIGIN + '/' + OG_IMAGE + '">' +
+    '\n<meta name="twitter:image:alt" content="' + OG_ALT.replace(/"/g, '&quot;') + '">' +
+    '\n<meta property="og:locale" content="en_CA">' +
     '\n<meta name="theme-color" content="#FFF4E4">' +
     '\n<link rel="icon" href="/img/kat-logo.png" type="image/png">' +
     '\n<link rel="apple-touch-icon" href="/img/kat-logo.png">'
@@ -407,6 +440,16 @@ function sentPanel(file, needle) {
 fs.mkdirSync(OUT, { recursive: true });
 for (const p of PAGES) if (p.route) fs.rmSync(path.join(OUT, p.route), { recursive: true, force: true });
 
+// resolve the preview image once: prefer the canvas source, fall back to the
+// copy already committed here (a later export may stop shipping it)
+const ogPath = [path.join(SRC, OG_IMAGE), path.join(OUT, OG_IMAGE)].find(p => fs.existsSync(p));
+if (!ogPath) throw new Error('preview image missing from both source and repo: ' + OG_IMAGE);
+const ogSize = imageSize(ogPath);
+if (ogSize.w !== 1200 || ogSize.h !== 630)
+  console.warn('  ! ' + OG_IMAGE + ' is ' + ogSize.w + 'x' + ogSize.h + ' — link previews expect 1200x630');
+if (fs.statSync(ogPath).size > 300 * 1024)
+  console.warn('  ! ' + OG_IMAGE + ' is over 300KB — WhatsApp will fall back to a thumbnail');
+
 const HEADER_HTML = buildHeader();
 const $3plus = load('booking-3plus');
 
@@ -467,6 +510,8 @@ for (const p of PAGES) {
   // any root-relative local asset, not just img/ — a narrower pattern silently
   // dropped a photo the canvas had left at the source root
   for (const m of html.matchAll(/(?:src|href)="\/([^"]+\.(?:jpg|jpeg|png|svg|webp|gif|ico))"/gi)) referenced.add(m[1]);
+  // og:image / twitter:image live in meta content=, not src/href
+  for (const m of html.matchAll(/content="https?:\/\/[^"\/]+\/([^"]+\.(?:jpg|jpeg|png|svg|webp|gif|ico))"/gi)) referenced.add(m[1]);
 }
 fs.mkdirSync(path.join(OUT, 'img'), { recursive: true });
 const UNRENAME = Object.fromEntries(Object.entries(ASSET_RENAME).map(([k, v]) => [v, k]));

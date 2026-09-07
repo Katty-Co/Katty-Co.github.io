@@ -200,7 +200,40 @@ A narrower earlier version of that check only looked at `img/`, and silently
 shipped a broken image that the canvas had left at the source root — hence
 `ASSET_RENAME` in `tools/build.js`, which gives such files a real home.
 
-### 6. `.gitignore` is a whitelist. Keep it that way.
+### 6. The link-preview image
+
+`img/og-preview.png` is the card shown when the link is shared. `OG_IMAGE` and
+`OG_ALT` in `tools/build.js` point at it, and the build reads `og:image:width`
+and `og:image:height` **out of the file header** rather than hardcoding them —
+those two tags must match the real pixels or some crawlers show no image on the
+first scrape, and hardcoded numbers rot the first time the image is resized.
+
+Requirements, enforced with warnings at build time:
+
+- **1200 x 630** (1.91:1)
+- **under 300 KB** — Facebook allows 8 MB and X allows 5 MB, but WhatsApp
+  silently drops to a tiny thumbnail above roughly 300 KB, and this business
+  gets shared person-to-person in chat apps
+- no alpha channel; transparency renders black on some clients
+
+**There is no size that avoids cropping** — platforms each render a different
+aspect ratio, so one image cannot satisfy all of them. What matters is layout:
+
+| Platform | Shape | Window on the 1200x630 canvas |
+| --- | --- | --- |
+| Facebook, LinkedIn, Slack, Discord, iMessage, WhatsApp | 1.91:1 | the whole image |
+| X | 2:1 | `y 15 -> 615` |
+| Some chat clients | 1:1 | `x 285 -> 915` |
+
+So anything brand-critical belongs inside **`x 285-915, y 15-615`**. The current
+image is a deliberate exception: its wordmark runs to `x 1056`, so a square crop
+cuts "Co.". That was accepted because square croppers are a minority and the
+image reads well at feed size; do not treat it as the pattern to copy.
+
+Note the asset scanner follows `og:image` through `<meta content=...>` as well as
+`src`/`href`, because nothing on the page links the preview image.
+
+### 7. `.gitignore` is a whitelist. Keep it that way.
 
 The working folder also holds roughly **2.6 GB of raw source photography and
 video** — `Dogs/`, `Cats/`, `Photos-1-001/`, and a 1.3 GB zip. None of it belongs
@@ -216,7 +249,7 @@ Always confirm what you are about to commit:
 git diff --cached --name-only
 ```
 
-### 7. Commit identity
+### 8. Commit identity
 
 Commit as the owner's personal GitHub identity, `miguelmonzones@gmail.com` — the
 address verified on the account. Do **not** author commits here with any employer
