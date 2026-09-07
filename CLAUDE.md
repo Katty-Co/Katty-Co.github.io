@@ -8,47 +8,65 @@ The website for **Katty &amp; Co.**, a pet sitting business in Vancouver, BC
 (boarding, day care, drop-in visits, dog walking), owned by Alejandra. Maintained
 by Miguel Monzones.
 
-Deployed via **GitHub Pages** at the custom domain <https://kattyco.ca>. Because
-the repo is named `Katty-Co.github.io`, it is the `Katty-Co` org's root Pages
-site and publishes automatically from `main` — there is no Actions workflow and
-no build step *on GitHub's side*. Push to `main` and it goes live within a minute
-or two. `katty-co.github.io` 301-redirects to the custom domain.
+Served by **Cloudflare** at <https://kattyco.ca>, built from this repo. Push to
+`main` and Cloudflare rebuilds and deploys automatically, usually within a
+minute. There is no build step on Cloudflare's side either — the pages are
+already compiled static HTML at the repo root (see §1).
 
-### The custom domain, and the Cloudflare trap
+### Hosting: how this actually works
 
-`kattyco.ca` is registered at GoDaddy but uses **Cloudflare nameservers**
-(`konnor`/`colette.ns.cloudflare.com`) for DNS. `CNAME` at the repo root holds
-`kattyco.ca` and **must not be deleted** — it is what binds the domain to this
-Pages site. It is explicitly whitelisted in `.gitignore`; without that entry the
-`/*` whitelist silently refuses to re-add it if it ever leaves the index.
+| | |
+| --- | --- |
+| Registrar | GoDaddy (registration only) |
+| DNS | Cloudflare nameservers `konnor`/`colette.ns.cloudflare.com` |
+| Host | Cloudflare, project `katty-co-github-io`, connected to this GitHub repo |
+| Hostnames | `kattyco.ca` and `www.kattyco.ca`, both bound to the Worker |
+| Certificate | Issued and renewed by Cloudflare, covering apex and `*.kattyco.ca` |
+
+It deployed as a **Worker with static assets**, not classic Cloudflare Pages —
+Cloudflare now steers new projects there. The `workers.dev` URL exists but is
+switched off. `_headers` is honoured either way (verified).
 
 `ORIGIN` in `tools/build.js` is `https://kattyco.ca`, so canonical, `og:url` and
-`sitemap.xml` all name the custom domain rather than the github.io host.
+`sitemap.xml` all name the real domain.
 
-**If HTTPS breaks with Cloudflare error 525, this is why:** GitHub Pages issues
-its own Let's Encrypt certificate for the custom domain, and it validates over
-HTTP against the domain. If the Cloudflare records for `kattyco.ca` / `www` are
-**proxied** (orange cloud), the validation request never reaches GitHub, so the
-certificate is never issued. Cloudflare then tries HTTPS to an origin holding no
-matching certificate and returns 525. It is a deadlock, not a transient error —
-waiting does not fix it.
+`www` 301-redirects to the apex via a **Redirect Rule** (Rules → Overview,
+created from the "Redirect from WWW to root" template). It preserves both path
+and query string — verified that `www.kattyco.ca/booking/?ref=x` lands on
+`kattyco.ca/booking/?ref=x` in one hop.
 
-The cure is to set both records to **DNS only** (grey cloud) until GitHub reports
-the certificate as issued and *Enforce HTTPS* becomes selectable. After that you
-may re-enable the proxy with SSL/TLS mode **Full (strict)**; leaving it on DNS
-only is also fine, since Pages already fronts the site with its own CDN.
+**Cloudflare is not the origin — it *is* the host.** This wasted real time once:
+Cloudflare only does DNS and proxying *until* you connect a project to it. Before
+this migration the site was on GitHub Pages with Cloudflare in front, and that
+arrangement had its own trap, now gone: GitHub validated its own Let's Encrypt
+certificate over HTTP, which a proxied (orange-cloud) record blocked, producing a
+permanent error 525 rather than a transient one. None of that applies now —
+Cloudflare owns the certificate end to end.
 
-Diagnosing it from the shell:
+### Two ways this setup has broken before
 
-```bash
-gh api repos/Katty-Co/Katty-Co.github.io/pages --jq '{cname,https_enforced}'
-# https_enforced:false  => no certificate yet
-curl -sI --resolve kattyco.ca:80:185.199.108.153 http://kattyco.ca/ | head -1
-# 200 here proves the origin is fine and the problem is the certificate
-```
+**Deleting the hostname binding takes the site down instantly.** Removing the
+custom domain — from either host — leaves the hostname with nothing to serve it:
+GitHub returned its own 404, and Cloudflare returns 530. Both happened. Never
+remove a hostname binding until its replacement is verified serving.
 
-Note the MX record points at purelymail, so email is live on this domain.
-MX records are never proxied, so toggling the orange cloud cannot affect mail.
+**Cloudflare refuses to bind a hostname that already has DNS records.** The error
+is *"Hostname 'x' already has externally managed DNS records"*. Delete the
+conflicting `A`/`CNAME` record first, then bind. Conversely, when Cloudflare warns
+that `www` "may not be proxied" while the DNS list plainly shows a **Worker**
+record marked Proxied, that check is a false positive — its pre-flight only looks
+for `A`/`CNAME`. Deploy anyway; do **not** let it create a second record.
+
+### Do not touch the email records
+
+`MX`, `SRV (_autodiscover)`, `_dmarc`, the SPF `TXT`, the purelymail ownership
+`TXT`, and `autoconfig` all belong to Alejandra's live mailbox at purelymail.
+`autoconfig` must stay **DNS only** — proxying it breaks mail-client
+autoconfiguration, which it was silently doing for a while.
+
+GitHub Pages is left published at `katty-co.github.io` as a free fallback, with
+its custom domain cleared and no `CNAME` file. Canonical tags all point at
+`kattyco.ca`, so the duplicate does not compete in search.
 
 Note: the business is **Katty &amp; Co.**; **Kat** is the resident cat. Both spellings
 are correct in their own context — do not "fix" one into the other.
@@ -65,7 +83,10 @@ are correct in their own context — do not "fix" one into the other.
 | `tools/build.js` | The compiler that produces the pages. |
 | `tools/site.js` | Master copy of `assets/site.js`; the build copies it into place. |
 | `robots.txt`, `sitemap.xml` | Generated by the build. |
-| `.nojekyll` | Disables Jekyll on Pages. |
+| `404.html` | Branded not-found page. **Hand-written**, not generated. Served by both hosts. |
+| `_headers` | Cloudflare response headers — HSTS, nosniff, referrer policy, asset caching. Consumed as config, never served. |
+| `.assetsignore` | Keeps `.git`, `tools/`, `brand/` and the docs out of the published site. See §7. |
+| `.nojekyll` | Only matters to the GitHub Pages fallback. |
 
 ## Read this before editing anything
 
@@ -233,7 +254,33 @@ image reads well at feed size; do not treat it as the pattern to copy.
 Note the asset scanner follows `og:image` through `<meta content=...>` as well as
 `src`/`href`, because nothing on the page links the preview image.
 
-### 7. `.gitignore` is a whitelist. Keep it that way.
+### 7. What gets published, and what must not
+
+Cloudflare Workers Static Assets publishes **everything** under the assets
+directory, which here is the repo root. GitHub Pages excluded `.git` implicitly;
+Cloudflare does not. The first deployment served `/.git/config`, `/.git/HEAD`
+and `/.git/logs/HEAD` — all verified 200 — plus `/wrangler.jsonc`, `/CLAUDE.md`
+and `/tools/build.js`.
+
+`.assetsignore` closes that. It excludes version-control internals, host config,
+these docs, `tools/` and `brand/`. Verify after any change to it:
+
+```bash
+for p in .git/HEAD .git/config CLAUDE.md tools/build.js brand/KatCo.png; do
+  printf '%s %s\n' "$p" "$(curl -s -o /dev/null -w '%{http_code}' "https://kattyco.ca/$p")"
+done   # every one must be 404
+```
+
+**`_headers` is deliberately NOT in `.assetsignore`.** Cloudflare consumes it as
+configuration and does not serve it; ignoring it would silently drop every
+security and caching header. Confirm with `curl -sI https://kattyco.ca/` — five
+security headers should be present.
+
+The alternative fix — moving the site into a `public/` subdirectory — was
+rejected because it would break the GitHub Pages fallback, which serves from the
+root.
+
+### 8. `.gitignore` is a whitelist. Keep it that way.
 
 The working folder also holds roughly **2.6 GB of raw source photography and
 video** — `Dogs/`, `Cats/`, `Photos-1-001/`, and a 1.3 GB zip. None of it belongs
@@ -249,7 +296,7 @@ Always confirm what you are about to commit:
 git diff --cached --name-only
 ```
 
-### 8. Commit identity
+### 9. Commit identity
 
 Commit as the owner's personal GitHub identity, `miguelmonzones@gmail.com` — the
 address verified on the account. Do **not** author commits here with any employer
@@ -282,12 +329,19 @@ Then visit <http://localhost:8766>.
    `document.documentElement.scrollWidth` does not exceed `window.innerWidth`.
 6. Do **not** test-submit the live forms casually — it emails Alejandra. Mock
    `window.fetch` instead.
-7. After pushing, cache-bust when checking, since Pages serves with
-   `Cache-Control: max-age=600`:
+7. After pushing, wait for the Cloudflare deployment, then cache-bust when
+   checking — Cloudflare caches at the edge:
 
 ```bash
-curl -sI "https://katty-co.github.io/services/?cb=$RANDOM" | head -1
+CB=$RANDOM
+for p in "" services/ about/ pack/ reviews/ faq/ booking/; do
+  printf '%-12s %s\n' "/$p" "$(curl -s -o /dev/null -w '%{http_code}' "https://kattyco.ca/$p?cb=$CB")"
+done
+curl -s -o /dev/null -w 'www -> %{http_code} %{redirect_url}\n' "https://www.kattyco.ca/booking/"
 ```
+
+   After swapping an image in place, purge the Cloudflare cache — `/img/*` is
+   sent with `max-age=604800` and the filenames are not content-hashed.
 
 ## Site structure
 

@@ -30,8 +30,9 @@ Columbia.
 
 ## Architecture
 
-Static HTML, served straight from GitHub Pages. There is no framework, no
-bundler and no build step on deploy — push to `main` and it is live.
+Static HTML, served by **Cloudflare** and built from this repo. There is no
+framework and no bundler — push to `main` and Cloudflare redeploys, usually
+within a minute. `www.kattyco.ca` 301-redirects to the apex.
 
 Each page is self-contained HTML with inlined styles, plus one shared 6 KB
 script that handles the mobile menu, the flip cards, the form chips and form
