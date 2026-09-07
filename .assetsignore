@@ -1,0 +1,34 @@
+# Files in this repo that must NOT be published as static assets.
+#
+# Cloudflare Workers Static Assets uploads everything in the assets directory,
+# which here is the repo root. Without this file the first deployment served
+# the whole .git directory — /.git/config, /.git/HEAD and /.git/logs/HEAD all
+# returned 200. GitHub Pages excludes .git implicitly, so this is a difference
+# between the two hosts, not something inherited.
+#
+# The repo is public, so nothing secret leaked. It is still worth closing: it
+# is what security scanners flag first, and it would become a real breach the
+# day this repo goes private or someone commits a credential.
+#
+# NOTE: _headers is deliberately absent. Cloudflare consumes it as
+# configuration and does not serve it, so ignoring it would silently drop
+# every security and caching header.
+
+# Version control internals
+.git
+.gitignore
+.gitattributes
+.assetsignore
+
+# Host-specific config that has no business being fetchable
+wrangler.jsonc
+CNAME
+.nojekyll
+
+# Repo documentation — lives on GitHub, not on the website
+CLAUDE.md
+README.md
+
+# The compiler, and brand sources the site never references at runtime
+tools
+brand
