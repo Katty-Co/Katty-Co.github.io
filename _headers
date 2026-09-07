@@ -1,0 +1,24 @@
+# Cloudflare Pages response headers. Ignored by GitHub Pages, so this file is
+# safe to keep during the migration and harmless if we ever move back.
+#
+# HSTS matches what GitHub Pages was already sending (max-age=31556952), so
+# moving to Cloudflare is not a downgrade for browsers that have already
+# visited. Deliberately no includeSubDomains: mail runs on subdomains of this
+# domain (autoconfig.kattyco.ca) and forcing HTTPS on those buys nothing.
+
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Images and the one script are stable but NOT content-hashed, so a long
+# immutable cache would strand a replaced photo in browsers for its full
+# lifetime. A week is the compromise; purge the Cloudflare cache after
+# swapping an asset in place.
+/img/*
+  Cache-Control: public, max-age=604800
+
+/assets/*
+  Cache-Control: public, max-age=604800
